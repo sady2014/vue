@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>梧桐树下</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<input type="text" id="app1">
+<script>
+    let obj = {};
+    let temp = {};
+    Object.defineProperty(obj,'name',{
+        // 获取obj的name属性时会触发的程序
+        get(){
+            return temp['name'];
+        },
+        set(val){
+            temp['name'] = val;
+            app1.value = val;
+        }
+        // configurable:false,//是否可以删除
+        // writable:false,//是否删除
+        // enumerable:false,
+        // value:123//默认
+    })
+    app1.value = obj['name'];
+    app1.addEventListener('app1',function () {
+        obj['name']=app1['value'];
+    })
+</script>
+</body>
+</html>

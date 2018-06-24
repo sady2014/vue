@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+</head>
+<body>
+    <div id="app1">
+        <input type="text" v-model="msg">
+        <div v-once="" v-text="msg">
+        </div>
+        <!-- <div v-html="html"></div> -->
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var app1 = new Vue({
+            el:"#app1",
+            data:{
+                msg:"v-once",
+                html:"<h1>你好</h1>"
+            }
+        })
+    </script>
+</body>
+</html>

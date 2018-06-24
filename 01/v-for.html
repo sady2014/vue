@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<!--
+    v-for 解决循环问题， 更高效，会复用原有的结构。
+-->
+<div id="app">
+    <ul>
+        <li v-for="(fruit,index) in fruits">
+            {{index+1}}{{fruit.name}}
+            <ul>
+                <li v-for="(color,childIndex) in fruit.color">
+                    {{index+1}}.{{childIndex+1 }}-{{color}}
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+<script>
+
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            fruits:[
+                {name:"香蕉",color:['gereen','black','yellow']},
+                {name:"橘子",color:['red','green','yellow']},
+                {name:"苹果",color:['red','green']}
+                ]
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+    <div id="app">
+        <!--
+            click ;
+            mouthon
+
+        -->
+        <div @click="fn">点我啊</div>
+    </div>
+<script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // methods中的数据不能和data的数据重复
+        let vm = new Vue({//根实例
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                fn(){
+                    alert(1)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

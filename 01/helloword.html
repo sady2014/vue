@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>梧桐树下</title>
+
+</head>
+<body>
+<div id="app">{{msg}}</div>
+<div id="app1">
+    {{msg}}
+    <input type="text" v-model="msg">
+</div>
+
+<!--表单元素：input  checkbox textarea radio select-->
+<!--vue的" 指令" 是dom上的行间属性 vue 给这类属性赋予了一定的意义来实现特殊的功能，所有的指令以V开头 -->
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data:{
+            msg:'hello , world '
+        }
+    })
+    let app1 = new Vue({
+        el:"#app1",
+        data:{
+            msg:"双向绑定测试"
+        }
+    })
+</script>
+</body>
+</html>

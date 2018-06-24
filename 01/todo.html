@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO LIST</title>
+</head>
+<body>
+<div id="app">
+    <!--
+    https://cn.vuejs.org/v2/guide/events.html#内联处理器中的方法
+    -->
+    <input type="text" v-model="val" @keyup.enter.ctrl="add">
+    <ul>
+        <li v-for="(ar,index) in arr">
+            {{ar}}
+            <button @click="remove(index)">delete</button>
+        </li>
+    </ul>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[],
+            val:"123"
+        },
+        methods:{
+            add(e){
+                if (e){
+                    this.arr.unshift(this.val)
+                    this.val=""
+                }
+            },
+            remove(i){this.arr = this.arr.filter((item,index)=>index!==i)}
+        }
+
+    })
+</script>
+</body>
+</html>
